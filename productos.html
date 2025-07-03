@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleShirt - Productos</title>
+  <link rel="stylesheet" href="productos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <nav class="nav-container">
+      <a href="pagina.html" class="logo">
+        <img src="img/LOGO_JAVA-removebg-preview.png" alt="Logo" class="logo-img">
+        <span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="pagina.html">Inicio</a></li>
+        <li class="nav-item"><a href="productos.html">Productos</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="cart-icon" onclick="toggleCart()">🛒<span id="cart-count">0</span></div>
+    </nav>
+  </header>
+
+  <!-- Filtro de Categoría -->
+  <section class="filter-section">
+    <select id="categoryFilter" onchange="filterProducts()">
+      <option value="all">Todas las categorías</option>
+      <option value="casual">Casual</option>
+      <option value="premium">Premium</option>
+      <option value="deportiva">Deportiva</option>
+      <option value="vintage">Vintage</option>
+    </select>
+  </section>
+
+  <!-- Productos -->
+  <section class="product-section" id="product-list">
+    <!-- Los productos se cargarán dinámicamente desde productos.js -->
+  </section>
+
+  <!-- Carrito -->
+  <section class="cart-container" id="cart">
+    <h2>Carrito de Compras</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: <span id="cart-total">$0</span></p>
+    <button onclick="clearCart()">Vaciar Carrito</button>
+  </section>
+
+ <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="img/LOGO_JAVA-removebg-preview.png" alt="Logo StyleShirt" class="footer-logo">
+      <h3>StyleShirt</h3>
+      <p>Viste diferente, viste SS.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Síguenos</h4>
+      <div class="social-icons">
+        <a href="#"><img src="https://img.freepik.com/fotos-premium/facebook-logo_1080029-107.jpg?semt=ais_items_boosted&w=740" alt="Facebook" /></a>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" /></a>
+        <a href="#"><img src="https://img.freepik.com/vector-gratis/twitter-nuevo-logotipo-2023-x-vector-fondo-blanco_1017-45422.jpg?semt=ais_hybrid&w=740" alt="Twitter" /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 StyleShirt. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+  <script src="productos.js"></script>
+</body>
+</html>

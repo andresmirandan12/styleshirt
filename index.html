@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShirtStyle - Iniciar Sesión</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login -->
+  <div class="form-container" id="login-container">
+    <h1 class="logo">👕 ShirtStyle</h1>
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="login-username" placeholder="Nombre de usuario">
+    <input type="password" id="login-password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate</a></p>
+  </div>
+
+  <!-- Registro -->
+  <div class="form-container hidden" id="register-container">
+    <h1 class="logo">👕 ShirtStyle</h1>
+    <h2>Registrarse</h2>
+    <input type="text" id="register-username" placeholder="Nuevo nombre de usuario">
+    <input type="password" id="register-password" placeholder="Contraseña">
+    <input type="password" id="register-confirm" placeholder="Confirmar contraseña">
+    <button onclick="register()">Registrarse</button>
+    <p>¿Ya tienes cuenta? <a href="#" onclick="showLogin()">Iniciar sesión</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
