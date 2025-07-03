@@ -49,3 +49,12 @@ window.addEventListener("load", () => {
   }
 });
 
+
+  function cerrarSesion() {
+    // Borra datos del localStorage (simulando cierre de sesión)
+    localStorage.clear();
+
+    // Redirige a una página de inicio o login (ajusta si es necesario)
+    window.location.href = "index.html"; 
+  }
+

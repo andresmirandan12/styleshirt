@@ -21,7 +21,10 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="productos.html">Productos</a></li>
                 <li class="nav-item"><a href="contacto.html">Contáctanos</a></li>
-                <li class="nav-item"><a href="index.html">Cerrar Sesión</a></li>
+                <li class="nav-item">
+  <button class="logout-btn" onclick="cerrarSesion()">Cerrar sesión</button>
+</li>
+
             </ul>
             <div class="mobile-menu">
                 <span></span>
@@ -197,7 +200,9 @@
     <p>&copy; 2025 StyleShirt. Todos los derechos reservados.</p>
   </div>
 </footer>
+<script src="auth.js"></script>
+<script>verificarSesion();</script>
 
-                        <script src="pagina.js"></script>
+<script src="pagina.js"></script>
 
     </body>

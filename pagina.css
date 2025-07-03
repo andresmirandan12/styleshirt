@@ -671,6 +671,23 @@
             transform: translateY(-2px);
         }
 
+
+
+        .logout-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #dc2626;
+}
+
         /* Animations */
         @keyframes fadeInUp {
             from {
