@@ -1,4 +1,4 @@
-// script.js - Funciones interactivas para StyleShirt
+
 
 // Menú móvil desplegable
 const mobileMenu = document.querySelector('.mobile-menu');
