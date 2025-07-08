@@ -24,7 +24,7 @@ function toggleMenu() {
 function cerrarSesion() {
   localStorage.removeItem("usuario");
   localStorage.removeItem("password");
-  window.location.href = "pagina.html"; // o cambia a la página principal que quieras
+  window.location.href = "index.html"; // o cambia a la página principal que quieras
 }
 
 // Mostrar bienvenida si ya ha iniciado sesión
