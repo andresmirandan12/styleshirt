@@ -21,9 +21,39 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a href="productos.html">Productos</a></li>
                 <li class="nav-item"><a href="contacto.html">Contáctanos</a></li>
-                <li class="nav-item">
-  <button class="logout-btn" onclick="cerrarSesion()">Cerrar sesión</button>
-</li>
+                <li class="nav-item" id="bienvenida" style="display: none;"></li>
+<div class="auth-section" id="authSection">
+        <button class="btn-login" onclick="mostrarLogin()">Iniciar Sesión</button>
+        <button class="btn-register" onclick="mostrarRegistro()">Registrarse</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Formulario de Login -->
+  <div id="loginForm" class="modal hidden">
+  <div class="form-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="loginNombre" placeholder="Nombre" />
+    <input type="password" id="loginPassword" placeholder="Contraseña" />
+    <button onclick="iniciarSesion()">Ingresar</button>
+
+    <p style="text-align:center;">¿No tienes cuenta?</p>
+    <button class="btn-alt" onclick="mostrarRegistro()">Registrarse</button>
+  </div>
+</div>
+
+  <!-- Formulario de Registro -->
+  <div id="registerForm" class="modal hidden">
+    <div class="form-container">
+      <h2>Registrarse</h2>
+      <input type="text" id="registroNombre" placeholder="Nombre" />
+      <input type="email" id="registroCorreo" placeholder="Correo" />
+      <input type="password" id="registroPassword" placeholder="Contraseña" />
+      <button onclick="registrarse()">Registrarse</button>
+    </div>
+  </div>
+
+
 
             </ul>
             <div class="mobile-menu">
@@ -216,5 +246,6 @@
 <script>verificarSesion();</script>
 
 <script src="pagina.js"></script>
+<script src="auth.js"></script>
 
     </body>
