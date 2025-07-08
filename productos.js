@@ -90,9 +90,8 @@ function toggleCart() {
 }
 
 // Inicial
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
   renderizarProductos(productos);
-  filterProducts();
-};
+});
 
 

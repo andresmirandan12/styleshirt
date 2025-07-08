@@ -1,5 +1,3 @@
-
-
 // Menú móvil desplegable
 const mobileMenu = document.querySelector('.mobile-menu');
 const navMenu = document.querySelector('.nav-menu');

@@ -16,41 +16,50 @@ function cerrarModales() {
   document.getElementById("registerForm").classList.add("hidden");
 }
 
-// Guardar usuario y contraseña en localStorage y redirigir al login
+// Registrar usuario
 function registrarse() {
   const nombre = document.getElementById("registroNombre").value;
   const correo = document.getElementById("registroCorreo").value;
   const password = document.getElementById("registroPassword").value;
 
   if (nombre && correo && password) {
-    localStorage.setItem("usuario", nombre);
-    localStorage.setItem("password", password);
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const existe = usuarios.some((u) => u.nombre === nombre);
+    if (existe) {
+      alert("El usuario ya está registrado.");
+      return;
+    }
+
+    usuarios.push({ nombre, correo, password });
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
     alert("¡Registrado con éxito!");
 
-    // Limpiar campos del formulario de registro
+    // Limpiar campos
     document.getElementById("registroNombre").value = "";
     document.getElementById("registroCorreo").value = "";
     document.getElementById("registroPassword").value = "";
 
-    // Mostrar formulario de login
     mostrarLogin();
   } else {
     alert("Completa todos los campos.");
   }
 }
 
-// Validar inicio de sesión
+// Iniciar sesión
 function iniciarSesion() {
   const nombre = document.getElementById("loginNombre").value;
   const password = document.getElementById("loginPassword").value;
 
-  const usuarioGuardado = localStorage.getItem("usuario");
-  const passwordGuardada = localStorage.getItem("password");
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-  if (nombre === usuarioGuardado && password === passwordGuardada) {
+  const usuario = usuarios.find((u) => u.nombre === nombre && u.password === password);
+
+  if (usuario) {
     alert("¡Inicio de sesión exitoso!");
+    localStorage.setItem("usuarioActual", JSON.stringify(usuario));
 
-    // Limpiar campos del formulario de login
     document.getElementById("loginNombre").value = "";
     document.getElementById("loginPassword").value = "";
 
@@ -63,24 +72,21 @@ function iniciarSesion() {
 
 // Cerrar sesión
 function cerrarSesion() {
-  localStorage.removeItem("usuario");
-  localStorage.removeItem("password");
+  localStorage.removeItem("usuarioActual");
   location.reload();
 }
 
-// Mostrar mensaje de bienvenida si está logueado
+// Mostrar bienvenida si está logueado
 function mostrarBienvenida() {
-  const usuario = localStorage.getItem("usuario");
+  const usuarioActual = JSON.parse(localStorage.getItem("usuarioActual"));
   const authDiv = document.getElementById("authSection");
 
-  if (usuario) {
+  if (usuarioActual) {
     authDiv.innerHTML = `
-      <span class="bienvenida">Bienvenido, <strong>${usuario}</strong></span>
+      <span class="bienvenida">Bienvenido/a, <strong>${usuarioActual.nombre}</strong></span>
       <button class="btn-logout" onclick="cerrarSesion()">Cerrar Sesión</button>
     `;
   }
 }
 
-// Mostrar bienvenida al cargar la página si ya ha iniciado sesión
 window.onload = mostrarBienvenida;
-
